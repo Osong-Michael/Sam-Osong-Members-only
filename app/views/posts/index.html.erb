@@ -1,12 +1,11 @@
-<p id="notice"><%= notice %></p>
+<section class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>All Posts</h1>
 
 <table>
   <thead>
     <tr>
-      <%# <th>Title</th> %>
-      <%# <th>Content</th> %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,14 +25,16 @@
         
       </tr>
     <% end %>
-    <%= link_to 'New Post', new_post_path %>
+    <div class="ctn"><%= link_to 'New Post', new_post_path, :class => "links, try" %></div>
    <% else %>
-    <p>Sign Up or Sign In to see who posted!!!</p>
+    <p class="after"><strong>Sign Up or Sign In to see who posted!!!</strong></p>
     <% @posts.each do |post| %>
-      <tr>
-        <td><span>Post By... <%= post.content%></span></td>
+      <tr class="wow">
+        <td class="yea"><span>John Doe: <%= post.content%></span></td>
       </tr>
     <%end%>
   <% end %>
   </tbody>
 </table>
+
+</section>

@@ -1,4 +1,4 @@
-# Bare Metal Forms and Helpers
+# Authentication
   In this project, we build a post page where anyone can see all the posts but only members 
   can see who posted the post. And members have access to create, edit and delete their post.  
 

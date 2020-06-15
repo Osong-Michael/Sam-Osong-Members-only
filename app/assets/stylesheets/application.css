@@ -28,6 +28,7 @@ header {
   width: 100%;
   justify-content: flex-end;
 }
+
 .navbar,
 li {
   list-style: none;

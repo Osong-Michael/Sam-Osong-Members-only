@@ -10,31 +10,19 @@
     </tr>
   </thead>
 
-  <tbody>
-  <% if user_signed_in?%>
+  <tbody>  
 
     <% @posts.each do |post| %>
-      <tr>
-        
-        <td><span>Post By: <strong><%= post.user.name%></strong></span> => <%= post.content %></td>
-        <% if current_user == post.user%>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        
+      <tr>        
+        <td><span>Post By: <strong><%= loged_user(post)%></strong></span> => <%= post.content %></td>
+        <td><%= is_current_user(post) %></td> 
       </tr>
-    <% end %>
-    <div class="ctn"><%= link_to 'New Post', new_post_path, :class => "links, try" %></div>
-   <% else %>
-    <p class="after"><strong>Sign Up or Sign In to see who posted!!!</strong></p>
-    <% @posts.each do |post| %>
-      <tr class="wow">
-        <td class="yea"><span>John Doe: <%= post.content%></span></td>
-      </tr>
-    <%end%>
-  <% end %>
+    <% end %>  
+   
+    <p class="after"><strong><%= sign_in_user %></strong></p>
+    
   </tbody>
 </table>
+<%= link_to 'New Post', new_post_path, :class => "links, try" %>
 
 </section>

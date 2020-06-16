@@ -13,10 +13,21 @@ module PostsHelper
     end
   end
 
-  def is_current_user(post)
-    if current_user == post.user
-      link_to 'Edit', edit_post_path(post) 
-    end
+def is_current_user(post)
+  if current_user == post.user
+    
+    link_to 'Edit', edit_post_path(post) 
+    
   end
+ 
+end
+
+def destroy_post(post)
+  if current_user == post.user  
+    
+    link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+  end
+end
+
 
 end
